@@ -5,9 +5,10 @@ const cors = require('cors'); //para evitar erros de política cors
 const db = require('./db'); //vamos conectar a conexão do banco de dados mysql, primeiro chamamos arquivo de database
 
 
-
 //para chamar o arquivo env
 env.config();
+db
+
 const port = process.env.PORT //deixe armazenar a porta no arquivo env, para chamar a variável env, use process.env.variable
 
 app.use(express.json());
