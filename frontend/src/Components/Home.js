@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
 import axios from 'axios'
+import { useHistory } from 'react-router-dom';
 
 export default function Home() {
 
+    const history = useHistory()
     const [name, setName] = useState();
     let message=''
 
@@ -12,7 +14,8 @@ export default function Home() {
         .then(response=>{
             if(response){
                 message = response.data.msg
-                    alert(message)
+                    //alert(message)
+                    history.push(`/map/${name}`)
                 }
             })
             .catch(err=>console.log(err))

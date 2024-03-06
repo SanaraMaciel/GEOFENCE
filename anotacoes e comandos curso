@@ -1,0 +1,123 @@
+***********inicialização do xampp pelo terminal *****************
+Alguns leitores nao conseguiram iniciar o servidor desta forma. Para quem nao conseguiu recomendo o seguinte caminho:
+cd /opt/lampp/
+ls
+sudo ./manager-linux-x64.run  ouuu sudo ./xampp-installer.run
+
+
+********alteração da versão npm usada no linux *************
+instalar o nvm : curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash ou pelo wget: wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+	$ nvm use 16
+	Now using node v16.9.1 (npm v7.21.1)
+	$ node -v
+	v16.9.1
+	$ nvm use 14
+	Now using node v14.18.0 (npm v6.14.15)
+	$ node -v
+	v14.18.0
+	$ nvm install 12
+	Now using node v12.22.6 (npm v6.14.5)
+	$ node -v
+	v12.22.6
+
+
+
+*********** Criação do Projeto GeoFence ************
+
+* Crie uma pasta no seu diretorio escolhido chamada GEOMAP -> dentro dela crie uma pasta chamada server e a abra o VsCode
+
+* Após abrir a pasta abra o terminal no vs code e entre dentro da pasta server pelo comando cd server
+
+* Após digite a configuração para iniciar o package.json com o comando npm init -- adicione as configurações conforme desejar e digite enter a cada linha--ele criará o arquivo 
+chamado package.json com as informaçoes passadas anteriormente
+
+
+* Após o passo anterior crie um arquivo chamado index.js
+
+
+* Após criar o arquivo vá no terminal pasta server e digite o seguinte comando:  npm install express nodemon cors dotenv mysql -- aguarde a instalação completa do banco
+
+* Adicione essas propriedades no arquivo index.js :
+
+	const express = require('express');
+	const app = express();
+	const env = require('dotenv'); //para armazenar variáveis ​​constantes no arquivo de ambiente
+	const cors = require('cors'); //para evitar erros de política cors
+	const port = 2000 //deixe armazenar a porta no arquivo env
+
+	//listen to port 2000 
+	app.listen(port, () =>{
+	    console.log(`Rodando na porta ${port}`);
+	})
+
+
+* Crie o arquivo .env e adicione a porta nele assim: PORT = 2000
+
+
+*** para poder colocar o valor de uma váriavel no console é necessário colocar o texto dentro desse caracter ` assim: console.log(`Rodando na porta ${port}`);
+
+*no terminal dentro da pasta server execute o comando: npm install express nodemon cors dotenv mysql *** Caso tenha erro de cors e não consiga executar o programa digite o comando : npm add cors
+
+*** iniciando o xampp ****
+	Passo 1. Abra um terminal;
+	Passo 2. Se você quiser iniciar o XAMPP através do terminal, use este comando:
+	sudo /opt/lampp/lampp start
+	
+	
+********* Configurando o módulo de frontend **********
+
+* Crie uma pasta dentro do diretório do projeto chamada frontend
+
+* abra o terminal dentro dessa pasta : cd frontend
+
+* Digite o comando sudo npx create-react-app . para criar o aplicativo react 
+
+*** Caso ocorra erro devido a versão do node ser antiga atualize a mesma com o seguinte comando: sudo npm install -g n 
+depois digite os comando sudo n lts e sudo n latest 
+depois remova as verões instaladas anteriormente com o comando : n prune
+
+talvez seja preciso atualizar a versão do npm digite o comando: sudo npm install -g npm@10.5.0
+
+
+*** instale o react router para o aplicativo, abra o terminal na pasta react e digite o seguinte comando: npm install react-router-dom@5.2.0
+
+* Após instale o pacote google maps através do comando: npm install @react-google-maps/api@2.2.0
+**caso ocorra um erro de legacy execute esse comando antes: npm config set legacy-peer-deps true e depois execute o comando acima novamente
+
+
+******** toda vez que for rodar o projeto é preciso abrir o terminal na pasta server e executar o comando npm start e após abrir o terminal na pasta frontend e tbm executar o comando npm start
+
+
+
+* Dentro da pasta frontend no terminal Instale o bootstrap react através do comando: npm install react-bootstrap bootstrap - talvez seja necessário dar o comando --force no final do comando para
+não dar conflitos com outras versões 
+
+
+* Execute o comando npm audit fix -- ver
+
+* Dentro da pasta frontend -> src crie uma pasta chamada Components -> dentro dela crie um arquivo chamado Header 
+
+**Após varias criações de códigos, pacotes e classes para adicionar o axios ao botão de adicionar localização executar o comando: npm install axios
+
+
+add ur api key and do npm start again
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
